@@ -1,0 +1,10 @@
+<h1>All Dogs</h1>
+<% @dogs.each do |dog| %>
+  <div class="media">
+    <div class="media-body">
+      <h4 class="media-heading">
+        <%= link_to dog.name, dog %>
+      </h4>
+    </div>
+  </div>
+<% end %>

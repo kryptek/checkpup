@@ -7,4 +7,4 @@ rand(10..30).times do
 end
 
 puts "Seed finished"
-puts "#{Dog.count} posts created"
+puts "#{Dog.count} dogs created"
