@@ -12,7 +12,7 @@ class DogsController < ApplicationController
   end
 
   def create
-  @dog = Dog.new(params[:dog])
+  @dog = current_user.dogs.build(params[:dog])
     if @dog.save
       flash[:notice] = "Dog was created."
       redirect_to @dog
