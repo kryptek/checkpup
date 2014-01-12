@@ -1,4 +1,7 @@
 <h1><%= @dog.name %></h1>
+
+<%= link_to "Edit", edit_dog_path(@dog), class: 'btn btn-mini' %>
+
 <p><%= @dog.needs %></p>
 <p><%= @dog.weight %></p>
 <p><%= @dog.breed %></p>

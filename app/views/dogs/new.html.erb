@@ -1,2 +1,51 @@
-<h1>Dogs#new</h1>
-<p>Find me in app/views/dogs/new.html.erb</p>
+<h1>New Dog</h1>
+
+<div class="row">
+  <div class="span6">
+    <p>Guidelines for new dogs:</p>
+    <ul>
+      <li>Make sure to fill out all of the fields completely</li>
+      <li>Weigh each dog twice</li>
+      <li>Check vet papers to compare the data</li>
+    </ul>
+  </div>
+  <div class="span6">
+    <%= form_for @dog, html: { class: 'form-horizontal' } do |f| %>
+      <div class="control-group">
+        <%= f.label :name, class: 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :name %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :breed, class: 'control-label' %>
+        <div class="controls">
+          <%= f.text_area :breed, rows: 8 %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :needs, class: 'control-label' %>
+        <div class="controls">
+          <%= f.text_area :needs, rows: 8 %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :weight, class: 'control-label' %>
+        <div class="controls">
+          <%= f.text_area :weight, rows: 8 %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :age, class: 'control-label' %>
+        <div class="controls">
+          <%= f.text_area :age, rows: 8 %>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <%= f.submit "Save", class: 'btn' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
