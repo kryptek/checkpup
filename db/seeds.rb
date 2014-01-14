@@ -10,7 +10,7 @@ rand(4..10).times do
   u.skip_confirmation!
   u.save
 
-rand(10..30).times do
+rand(5..12).times do
   p = Dog.create(name: Faker::Lorem.words(rand(1..10)).join(" "), 
     needs: Faker::Lorem.paragraphs(rand(1..4)).join("\n"), 
     breed: Faker::Lorem.words(rand(1..10)).join(" "),

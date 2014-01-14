@@ -1,6 +1,8 @@
 <h1><%= @dog.name %></h1>
 
-<%= link_to "Edit", edit_dog_path(@dog), class: 'btn btn-mini' %>
+<% if can? :edit, @dog %>
+  <%= link_to "Edit", edit_dog_path(@dog), class: 'btn btn-mini' %>
+<% end %>
 
 <p><%= @dog.needs %></p>
 <p><%= @dog.weight %></p>
