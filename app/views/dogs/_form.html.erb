@@ -1,0 +1,47 @@
+<%= form_for [dog], html: { class: 'form-horizontal' } do |f| %>
+  <% if dog.errors.any? %>
+    <div class="alert alert-block">
+      <h4>There are <%= pluralize(dog.errors.count, "error") %>.</h4>
+      <ul>
+        <% dog.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= control_group_tag(dog.errors[:title]) do %>
+    <%= f.label :name, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name %>
+    </div>
+  <% end %>
+  <%= control_group_tag(dog.errors[:breed]) do %>
+    <%= f.label :breed, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :breed %>
+    </div>
+  <% end %>
+  <%= control_group_tag(dog.errors[:weight]) do %>
+    <%= f.label :weight, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :weight %>
+    </div>
+  <% end %>
+  <%= control_group_tag(dog.errors[:age]) do %>
+    <%= f.label :age, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :age %>
+    </div>
+  <% end %>
+  <%= control_group_tag(dog.errors[:body]) do %>
+    <%= f.label :needs, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :needs, rows: 8 %>
+    </div>
+  <% end %>
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit "Save", class: 'btn' %>
+    </div>
+  </div>
+<% end %>
