@@ -16,6 +16,12 @@ end
 gem 'faker'
 gem 'devise'
 gem 'cancan'
+gem 'redcarpet'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'omniauth'
+gem 'omniauth-instagram'
+gem 'figaro'
 
 # Gems used only for assets and not required
 # in production environments by default.

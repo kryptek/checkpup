@@ -1,5 +1,5 @@
 class Dog < ActiveRecord::Base
-  has_many :owners
+  has_many :owners, dependent: :destroy
   attr_accessible :age, :breed, :name, :needs, :weight
   belongs_to :user
 

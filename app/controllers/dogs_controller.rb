@@ -39,4 +39,17 @@ class DogsController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    @dog= Dog.find(params[:id])
+    name = @dog.name
+    authorize! :destroy, @dog, message: "You need to own the dog to delete it."
+    if @dog.destroy
+      flash[:notice] = "\"#{name}\" was deleted successfully."
+      redirect_to dogs_path
+    else
+      flash[:error] = "There was an error deleting the dog."
+      render :show
+    end
+  end
 end

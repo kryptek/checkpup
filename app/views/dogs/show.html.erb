@@ -8,3 +8,9 @@
 <p><%= @dog.weight %></p>
 <p><%= @dog.breed %></p>
 <p><%= @dog.age %></p>
+
+ <div class="span4">
+<% if can? :destroy, @dog %>
+  <%= link_to "Delete Dog", @dog, method: :delete, class: 'btn btn-large btn-block btn-danger', confirm: 'Are you sure you want to delete this dog?' %> 
+<% end %>
+</div>
