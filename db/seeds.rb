@@ -19,9 +19,31 @@ rand(5..12).times do
 end
 end
 
-u = User.first
-u.skip_reconfirmation!
-u.update_attributes(email: 'brittany.jill.martin@gmail.com', password: 'helloworld', password_confirmation: 'helloworld')
+u = User.new(
+  name: 'Admin User',
+  email: 'admin@checkpup.com', 
+  password: 'helloworld', 
+  password_confirmation: 'helloworld')
+u.skip_confirmation!
+u.save
+u.update_attribute(:role, 'admin')
+
+u = User.new(
+  name: 'Moderator User',
+  email: 'moderator@checkpup.com', 
+  password: 'helloworld', 
+  password_confirmation: 'helloworld')
+u.skip_confirmation!
+u.save
+u.update_attribute(:role, 'moderator')
+
+u = User.new(
+  name: 'Member User',
+  email: 'member@checkpup.com', 
+  password: 'helloworld', 
+  password_confirmation: 'helloworld')
+u.skip_confirmation!
+u.save
 
 puts "Seed finished"
 puts "#{User.count} owners created"

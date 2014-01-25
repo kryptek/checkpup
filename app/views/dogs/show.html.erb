@@ -4,10 +4,11 @@
   <%= link_to "Edit", edit_dog_path(@dog), class: 'btn btn-mini' %>
 <% end %>
 
-<p><%= @dog.needs %></p>
-<p><%= @dog.weight %></p>
-<p><%= @dog.breed %></p>
-<p><%= @dog.age %></p>
+<p>Dog's needs: <%= @dog.needs %></p>
+<p>Dog's weight: <%= @dog.weight %></p>
+<p>Dog's breed: <%= @dog.breed %></p>
+<p>Dog's age: <%= @dog.age %></p>
+<p><%= image_tag(@dog.image_url) if @dog.dogimage? %></p>
 
  <div class="span4">
 <% if can? :destroy, @dog %>

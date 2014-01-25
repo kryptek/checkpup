@@ -22,6 +22,7 @@ gem 'mini_magick'
 gem 'omniauth'
 gem 'omniauth-instagram'
 gem 'figaro'
+gem 'fog'
 
 # Gems used only for assets and not required
 # in production environments by default.
