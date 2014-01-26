@@ -8,7 +8,7 @@
 <p>Dog's weight: <%= @dog.weight %></p>
 <p>Dog's breed: <%= @dog.breed %></p>
 <p>Dog's age: <%= @dog.age %></p>
-<p><%= image_tag(@dog.image_url) if @dog.dogimage? %></p>
+<p><%= image_tag(@dog.dogimage_url) if @dog.dogimage? %></p>
 
  <div class="span4">
 <% if can? :destroy, @dog %>

@@ -12,16 +12,17 @@ class DogsController < ApplicationController
     authorize! :create, Dog, message: "You need to be a member to create a new dog."
   end
 
-  def create
-  @dog = current_user.dogs.build(params[:dog])
+ def create
+    @dog = Dog.new(params[:dog])
+    authorize! :create, @dog, message: "You need to be an admin to do that."
     if @dog.save
-      flash[:notice] = "Dog was created."
+      flash[:notice] = "Dog was saved successfully."
       redirect_to @dog
     else
-      flash[:error] = "There was an error saving the dog. Please try again."
+      flash[:error] = "Error creating dog. Please try again."
       render :new
     end
-  end
+ end
 
   def edit
     @dog = Dog.find(params[:id])
